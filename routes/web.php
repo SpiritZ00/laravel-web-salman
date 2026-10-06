@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MatakuliahController;
+use App\Http\Controllers\Homecontroller;
 
 Route::get('/', function () {
     return view('welcome');
@@ -22,3 +23,4 @@ Route::get('/nim/{param1?}', function ($param1='salman') {
 Route::get('/matakuliah', [MatakuliahController::class, 'index']);
 
 Route::get('/matakuliah/show/{kode?}', [MatakuliahController::class, 'show']);
+Route::get('/home',[Homecontroller::class,'index']);
