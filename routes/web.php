@@ -5,9 +5,9 @@ use App\Http\Controllers\MatakuliahController;
 use App\Http\Controllers\Homecontroller;
 use App\Http\Controllers\QuestionController;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::get('/pcr', function () {
     return 'Selamat Datang di Website Kampus PCR!';

@@ -27,7 +27,12 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        $data['nama']   = $request->input('nama');
+        $data['email']  = $request->input('email');
+        $data['pertanyaan'] = $request->input('pertanyaan');
+
+        return view('home-question-response', compact('data'));
+        // Simpan data ke database atau lakukan tindakan lainnya
     }
 
     /**
