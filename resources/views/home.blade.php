@@ -163,6 +163,17 @@
                     <div class="card-body">
                         <h5 class="card-title">Form Pertanyaan</h5>
 
+                        @if(session('success_data'))
+                            @php 
+                                $successData = session('success_data'); 
+                            @endphp
+                            <div class="alert alert-info" role="alert" style="background-color: #e0f7fa; color: #006064; border-color: #b2ebf2;">
+                                Terimakasih <strong style="color: #004d40;">{{ $successData['nama'] }}</strong>! 
+                                Pertanyaan ini: <strong style="color: #004d40;">{{ $successData['pertanyaan'] }}</strong> 
+                                akan segera direspon melalui email <strong style="color: #004d40;">{{ $successData['email'] }}</strong>
+                            </div>
+                        @endif
+
                         {{-- Menampilkan Pesan Error Validasi --}}
                         @if ($errors->any())
                             <div class="alert alert-danger">
@@ -193,6 +204,22 @@
                             </div>
                             <button type="submit" class="btn btn-primary">Kirim Pertanyaan</button>
                         </form>
+                        @if(session('success_data'))
+                            @php 
+                                $successData = session('success_data'); 
+                            @endphp
+                            <div class="mt-4 p-4 border rounded bg-light text-center">
+                                <h5 class="text-success mb-3">Terima Kasih</h5>
+                                <div class="border-start border-primary border-3 ps-3 text-start mb-3" style="min-height: 40px;">
+                                    <p class="mb-1 text-muted small">Pertanyaan Anda:</p>
+                                    <strong>"{{ $successData['pertanyaan'] }}"</strong>
+                                </div>
+                                <p class="text-muted small">Pertanyaan Anda akan segera kami tanggapi dan balas melalui email<br>
+                                <span class="text-dark fw-medium">{{ $successData['email'] }}</span></p>
+                                <p class="text-muted small italic">Mohon cek kotak masuk atau folder spam Anda secara berkala.</p>
+                                <a href="{{ url()->current() }}" class="btn btn-sm btn-outline-primary mt-2">Kembali ke Beranda</a>
+                            </div>
+                        @endif
                     </div>
                 </div>
                 {{-- Alerts --}}
