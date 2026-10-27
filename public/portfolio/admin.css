@@ -1,0 +1,24 @@
+/* Tambahan untuk halaman admin, memakai variabel dari style.css */
+body.admin{cursor:auto;padding-top:7rem}
+.admin main{max-width:1100px;margin:0 auto;padding:2rem}
+.admin h1{font-size:clamp(2rem,6vw,3.5rem);line-height:1;margin-bottom:2rem}
+.admin .bar{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
+.btn{display:inline-block;font-family:var(--font-heading);text-transform:uppercase;text-decoration:none;cursor:pointer;
+  background:var(--accent-color-2);color:var(--primary-color);padding:.6rem 1.2rem;border:var(--border-thickness) solid var(--primary-color);
+  box-shadow:4px 4px 0 var(--primary-color);font-size:1rem}
+.btn:hover{transform:translate(2px,2px);box-shadow:none}
+.btn.red{background:var(--accent-color-1);color:var(--secondary-color)}
+.btn.sm{padding:.3rem .8rem;font-size:.85rem;box-shadow:3px 3px 0 var(--primary-color)}
+.alert{border:var(--border-thickness) solid var(--primary-color);padding:1rem;margin-bottom:1.5rem;background:var(--accent-color-2);font-weight:700}
+.alert.error{background:var(--accent-color-1);color:var(--secondary-color)}
+.alert ul{margin-left:1.2rem}
+.tablebox{overflow-x:auto;border:var(--border-thickness) solid var(--primary-color);box-shadow:var(--shadow-offset) var(--shadow-offset) 0 var(--accent-color-2);background:var(--secondary-color)}
+table{width:100%;border-collapse:collapse;min-width:640px}
+th,td{text-align:left;padding:1rem;border-bottom:2px solid var(--primary-color);vertical-align:middle}
+th{font-family:var(--font-heading);text-transform:uppercase;background:var(--primary-color);color:var(--secondary-color)}
+td img{width:72px;height:48px;object-fit:cover;border:2px solid var(--primary-color);display:block}
+td.act{white-space:nowrap}
+td.act form{display:inline}
+.formbox{max-width:640px;background:var(--secondary-color);border:var(--border-thickness) solid var(--primary-color);box-shadow:var(--shadow-offset) var(--shadow-offset) 0 var(--accent-color-2);padding:2rem}
+.formbox button.btn{width:100%;margin-top:.5rem;font-size:1.2rem}
+.hint{font-size:.85rem;color:#555;margin-top:.3rem}

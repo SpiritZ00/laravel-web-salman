@@ -1,11 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\MatakuliahController;
 use App\Http\Controllers\Homecontroller;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PelangganController;
+
+use App\Http\Controllers\ProjectController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -37,4 +40,14 @@ Route::resource('pelanggan', PelangganController::class);
 
 Route::put('/pelanggan/{id}', [PelangganController::class, 'update'])->name('pelanggan.update');
 Route::delete('/pelanggan/{id}', [PelangganController::class, 'destroy'])->name('pelanggan.destroy');
+
+
+
+
+Route::get('/porto', [ProjectController::class, 'portfolio'])->name('portfolio');
+
+// Halaman admin CRUD. Jika proyek Anda sudah punya login, tambahkan ->middleware('auth')
+Route::prefix('admin')->group(function () {
+    Route::resource('projects', ProjectController::class)->except(['show']);
+});
 
